@@ -11,7 +11,7 @@ class EntityManagerFactory
     public function getEntityManager(): EntityManagerInterface
     {
         $config = Setup::createAnnotationMetadataConfiguration(
-            [__DIR__ . '../../Aluraflix'],
+            [__DIR__ . '/../../Aluraflix'],
             true
         );
         $connection = [
