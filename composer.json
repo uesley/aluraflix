@@ -1,0 +1,12 @@
+{
+    "name": "uesley/aluraflix",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Aluraflix\\": "Aluraflix/"
+        }
+    },
+    "require": {
+        "doctrine/orm": "^2.9"
+    }
+}
