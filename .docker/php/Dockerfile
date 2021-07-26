@@ -1,4 +1,4 @@
-FROM php:7.3.7-apache
+FROM php:7.4-apache
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   autoconf \
@@ -21,11 +21,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   tdsodbc
 
 RUN docker-php-ext-configure gd \
-  --with-png-dir=/usr/include/ \
-  --with-jpeg-dir=/usr/include/ \
-  --with-freetype-dir=/usr/include/
+  --with-freetype \
+  --with-jpeg
 
-RUN docker-php-ext-configure zip --with-libzip
+RUN docker-php-ext-configure zip
 
 RUN docker-php-ext-configure pdo_dblib --with-libdir=/lib/x86_64-linux-gnu
 
