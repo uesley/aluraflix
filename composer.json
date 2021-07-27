@@ -3,7 +3,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Aluraflix\\": "Aluraflix/"
+            "Aluraflix\\": "Aluraflix/",
+            "Tests\\": "tests/"
         }
     },
     "require": {
