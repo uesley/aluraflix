@@ -1,13 +1,12 @@
 <?php
 
-use Aluraflix\Helpers\EntityManagerFactory;
+use Slim\Factory\AppFactory;
 
-$root_dir = __DIR__ . '/../';
+require __DIR__ . '/../bootstrap/bootstrap.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-require "$root_dir/vendor/autoload.php";
+$app = AppFactory::create();
 
-$dotenv = Dotenv\Dotenv::createImmutable($root_dir);
-$dotenv->load();
+$app->get('/videos', 'Aluraflix\Controllers\VideoController:index');
 
-$entityManager = (new EntityManagerFactory)->getEntityManager();
-var_dump($entityManager->getConnection());
+$app->run();
